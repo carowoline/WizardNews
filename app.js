@@ -1,10 +1,15 @@
 const express = require("express");
-const app = express();
 const morgan = require("morgan");
+const postBank = require("./postBank");
+const app = express();
 
 app.use(morgan('dev'));
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => {
+  // CARO: posts is a copy of data array from postBank.js
+  const posts = postBank.list();
+
+});
 
 const PORT = 1337;
 
