@@ -8,7 +8,13 @@ app.use(morgan('dev'));
 app.get("/", (req, res) => {
   // CARO: posts is a copy of data array from postBank.js
   const posts = postBank.list();
+  const html = `<!DOCTYPE html>
+  <html>
+  
+  </html>
+  `;
 
+  res.send(html);
 });
 
 const PORT = 1337;
