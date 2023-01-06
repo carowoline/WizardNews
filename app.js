@@ -4,6 +4,7 @@ const postBank = require("./postBank");
 const app = express();
 
 app.use(morgan('dev'));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   // CARO: posts is a copy of data array from postBank.js
