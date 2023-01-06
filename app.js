@@ -10,12 +10,20 @@ app.get("/", (req, res) => {
   const posts = postBank.list();
   const html = `<!DOCTYPE html>
   <html>
-  
-  </html>
-  `;
+  <head>
+  <title>Wizard News</title>
+  </head>
+  <body>
+    <ul>
+    ${posts.map(post => `<li></li>`)}
+    </ul>
+  </body>
+  </html>`;
 
   res.send(html);
 });
+
+// .map creates a new array for each element in posts
 
 const PORT = 1337;
 
