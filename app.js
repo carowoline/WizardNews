@@ -10,14 +10,14 @@ app.get("/", (req, res) => {
   const posts = postBank.list();
   const html = `<!DOCTYPE html>
   <html>
-  <head>
-  <title>Wizard News</title>
-  </head>
-  <body>
-    <ul>
-    ${posts.map(post => `<li>${post.title}</li><li>${post.name}</li>`)}
-    </ul>
-  </body>
+    <head>
+      <title>Wizard News</title>
+    </head>
+    <body>
+      <ul>
+        ${posts.map(post => `<li>${post.title}</li><li>${post.name}</li>`)}
+      </ul>
+    </body>
   </html>`;
 
   res.send(html);
