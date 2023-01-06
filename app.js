@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   </head>
   <body>
     <ul>
-    ${posts.map(post => `<li>${post.name}</li>`)}
+    ${posts.map(post => `<li>${post.title}</li><li>${post.name}</li>`)}
     </ul>
   </body>
   </html>`;
