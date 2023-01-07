@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: blue;
+}
+
 small {
   color: #828282;
 }
