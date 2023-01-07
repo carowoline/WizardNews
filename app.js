@@ -9,22 +9,34 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   // CARO: posts is a copy of data array from postBank.js
   const posts = postBank.list();
-  const html = `<!DOCTYPE html>
+  const html =`<!DOCTYPE html>
   <html>
     <head>
       <title>Wizard News</title>
+      <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
-      <ul>
-        ${posts.map(post => `<li>${post.title}</li><li>${post.name}</li>`)}
-      </ul>
+    <div class="news-list">
+    <header><img src="/logo.png"/>Wizard News</header>
+    ${posts.map(post => `
+      <div class='news-item'>
+        <p>
+          <span class="news-position">${post.id}. ▲</span>
+          ${post.title}
+          <small>(by ${post.name})</small>
+        </p>
+        <small class="news-info">
+          ${post.upvotes} upvotes | ${post.date}
+        </small>
+      </div>`
+    ).join('')}
+  </div>
     </body>
   </html>`;
 
   res.send(html);
 });
-
-// .map creates a new array for each element in posts
+// CARO: .map creates a new array for each element in posts
 
 const PORT = 1337;
 
