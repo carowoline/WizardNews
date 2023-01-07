@@ -83,8 +83,6 @@ app.get('/posts/:id', (req, res, next) => {
   else {
     res.send(singleView);
   }
-
-    // res.send(singleView);
 });
 
 const PORT = 1337;
